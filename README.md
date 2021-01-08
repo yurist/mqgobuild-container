@@ -5,7 +5,7 @@ A simple container to build golang applications with IBM MQ dependencies.
 
 A few points:
 
-- Why to have a custom build MQ container if one is available from IBM? The answer is the new IBM containers have no yum installed (I have no idea why.) While it is not necessary for MQ installation proper since it's already in rpm format, but it's very hard to use that image for builds - try to install git or gcc.
+- Why to have a custom built MQ container if one is available from IBM? The answer is the new IBM containers have no yum installed (I have no idea why.) While it is not necessary for MQ installation proper since it's already in rpm format, but it's very hard to use that image for builds - try to install git or gcc.
 - The image is based off CentOS, because MQ uses rpm images and the easiest to deal with them is on the Fedora lineage.
 
 In order to use:
