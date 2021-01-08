@@ -10,13 +10,13 @@ A few points:
 
 In order to use:
 
-- Download IBM MQ for Linux and put the file in `./mqdocker`. Adjust `./mqdocker/Dockerfile` if necessary to reflect correct file name instead of `mqadv_dev921_linux_x86-64.tar.gz` if different.
-- Download golang for Linux, put the file in `./mqgo`, adjust Dockerfile there to use the correct file name instead of `go1.14.13.linux-amd64.tar.gz` if needed.
-- Run:
+- Download IBM MQ for Linux and put the file in `./mqdocker`. 
+- Download golang for Linux, put the file in `./mqgo`.
+- Run, adjusting the archive names for the downloaded MQ and go archives if necessary:
 
 ``` 
-docker build -t mq-docker ./mqdocker
-docker build -t mqgo ./mqgo
+docker build --build-arg MQ_ARCHIVE=mqadv_dev921_linux_x86-64.tar.gz -t mq-docker ./mqdocker
+docker build --build-arg GO_ARCHIVE=go1.14.13.linux-amd64.tar.gz -t mqgo ./mqgo
 ```
 
 - To use mqgo container for the build, just run it:

@@ -2,10 +2,12 @@ FROM mq-docker
 
 USER 0
 
-COPY go1.14.13.linux-amd64.tar.gz /tmp
+ARG GO_ARCHIVE="go1.14.13.linux-amd64.tar.gz"
 
-RUN tar -C /usr/local -xzf /tmp/go1.14.13.linux-amd64.tar.gz && \
-    export PATH=$PATH:/usr/local/go/bin && \
+COPY $GO_ARCHIVE /tmp
+
+RUN tar -C /usr/local -xzf /tmp/$GO_ARCHIVE && \
+    rm /tmp/$GO_ARCHIVE && \
     yum -y install git && \
     yum -y group install "Development Tools"
 
